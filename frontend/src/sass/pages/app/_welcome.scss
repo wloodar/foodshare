@@ -1,0 +1,146 @@
+.wl-wrap {
+    // background: var(--surface-background);
+    background: var(--bg-color);
+}
+
+.wl-header {
+    background: lighten($color: $col_primary, $amount: 5%);
+
+    &--inner {
+        @include globalWidth;
+    }
+
+    &--box {
+        text-align: center;
+        padding-top: 14.7rem; padding-bottom: 12rem;
+
+        h2 {
+            color: #fff;
+            font-size: 4.7rem;
+            font-weight: 700;
+        }
+
+        p {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+    }
+}
+
+.wl-wrapper {
+    padding-top: 10.4rem; padding-bottom: 12.4em;
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (max-width: 43.75em) {
+        @include globalWidth;
+    }
+
+    @include respond(phone) {
+        padding-top: 6.7rem;
+    }
+
+    &--header {
+
+        h3 {
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: var(--primary-text);
+        }
+    }
+
+    &--description {
+        margin-top: 1.2rem;
+
+        p {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--secondary-text);
+            line-height: 170%;
+        }
+    }
+}
+
+.wl-theme {
+    width: 100%;
+
+    &--active {
+        border: 2px solid var(--primary) !important;
+    }
+
+    &--options {
+        @include clearfix;
+        margin-top: 3.7rem;
+
+        &--item {
+            width: calc(50% - 1.9rem);
+            margin-right: 1.9rem;
+            box-sizing: border-box;
+            float: left;
+            
+            border-radius: $border_radius;
+            overflow: hidden;
+            border: 1px solid var(--nav-bar-border);
+            @include createTransition(.5s, ease);
+
+            &:last-of-type {
+                 margin-right: 0; margin-left: 1.9rem;
+                 border: 1px solid var(--welcome-theme-border);
+            }
+        }
+    }
+
+    &--slider {
+        width: 100%;
+        margin-top: 3.1rem;
+
+        &--inner {
+            width: 100%;
+            background: var(--surface-background);
+            position: relative;
+            border-radius: 100px;
+            overflow: hidden;
+    
+            ul {
+                width: 100%;
+                @include clearfix;
+    
+                li {
+                    float: left;
+                    width: 50%;
+                    text-align: center;
+    
+                    button {
+                        display: block;
+                        width: 100%;
+                        position: relative;
+                        padding: 1rem 0;
+                        font-weight: 600;
+                        z-index: 200;
+                        background: rgba($color: #000000, $alpha: 0);
+                        color: var(--primary-text);
+                        font-size: 1.1rem;
+                        @include createTransition(.3s, ease);
+                    }
+                }
+    
+                li:last-of-type {
+                    float: none;
+                    position: absolute;
+                    @include createTransition(.3s, ease);
+                    background: darken($color: $col_primary, $amount: 10%);
+                    height: 100%;
+                    top: 0; bottom: 0;
+                    z-index: 100;
+                    border-radius: 50px;
+                }
+            }
+        }
+        
+        &--active {
+            color: #fff !important;
+        }
+    }
+}

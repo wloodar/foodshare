@@ -1,0 +1,134 @@
+.ap-d-header {
+    height: 67vh; width: 100%;
+    // background: #FBE2E2;
+    background: url('../../public/img/layout/graphics/lunchbox.svg');
+    // background-image: url('../../public/img/layout/header.svg');
+    background-repeat: no-repeat; background-size: cover; background-position: top;
+    position: relative;
+    margin-bottom: 2000px;
+
+    &--box {
+        @include absoluteCenter;
+        text-align: center;
+        // top: 47%;
+
+        h2 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            padding-bottom: 2.4rem;
+        }
+
+        &--search {
+            width: 87%;
+            margin-left: auto; margin-right: auto;
+
+            label {
+                position: relative;
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 1.7rem;
+                    top: 0;
+                    bottom: 0;
+                    width: 20px;
+                    background: url("../../public/img/icons/pin.svg");
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+
+                input {
+                    width: 100%;
+                    border: 0;
+                    padding: 1.5rem 1rem 1.5rem 4.7rem;
+                    font-weight: 500;
+                    font-size: 1.5rem;
+                    // @include createShadow(1px 0px 11px 1px rgba(140, 140, 140, 0.6));
+                    border-bottom: 2px solid #111;
+                    z-index: 10;
+                    @include createTransition(.5s, ease);
+                }
+            }
+        }
+    }
+}
+
+.bs-search {
+
+    &--results {
+        width: 100%;
+        position: relative;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+        // @include createTransition(.3s, cubic-bezier(0.55, 0.09, 0, 1.1));
+
+        &--absolute {
+            position: absolute;
+            left: -2px; right: -2px; top: 0;
+            background: #fff;
+            // @include createShadow(1px 0px 11px 1px rgba(140, 140, 140, 0.2));
+            border: 2px solid #f5f5f5;
+            // border-left: 2px solid #f5f5f5;
+            // border-bottom: 2px solid #f5f5f5;
+            z-index: -1;
+            box-sizing: border-box;
+            // box-shadow: 1px 2px 11px rgba(140,140,140,0.2), -1px 16px 23px rgba(140,140,140,0.2);
+        }
+
+        &--item {
+            width: 100%;
+            @include clearfix;
+            padding: 2rem 1.7rem;
+            @include createTransition(.3s, ease);
+            cursor: pointer;
+            box-sizing: border-box;
+            text-align: left !important;
+
+            &:hover {
+                background: #fbfbfb;
+            }
+
+            &--icon {
+                width: 2rem;
+                float: left;
+            }
+
+            &--content {
+                box-sizing: border-box;
+                width: calc(100% - 2rem);
+                float: left;
+                padding-left: 1.2rem;
+
+                h5 {
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                    color: #777;
+                    padding-top: .2rem;
+                }
+            }
+
+            &--alert {
+                text-align: center !important;
+
+                &:hover {
+                    background: #fff !important;
+                }
+
+                p {
+                    font-weight: 600;
+                    font-size: 1.3rem;
+                    color: darken($color: $col_primary, $amount: 10%);
+                }
+            }
+        }
+    }
+}

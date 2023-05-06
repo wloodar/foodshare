@@ -1,0 +1,216 @@
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+.bs-color {
+
+    &--primary {
+        background: darken($color: $col_primary, $amount: 10%) !important;
+        color: #fff !important;
+
+        svg { fill: #fff !important; }
+    }
+
+    &--primary-light {
+        background: lighten($color: $col_primary, $amount: 40%) !important;
+        color: darken($color: $col_primary, $amount: 10%) !important;
+
+        svg { fill: darken($color: $col_primary, $amount: 10%) !important; }
+    }
+
+    &--red {
+        background: darken($color: $col_bs_red, $amount: 5%) !important;
+        color: #fff !important;
+
+        svg { fill: #fff !important; }
+    }
+
+    &--red-light {
+        background: lighten($color: $col_bs_red, $amount: 40%) !important;
+        color: darken($color: $col_bs_red, $amount: 10%) !important;
+
+        svg { fill: darken($color: $col_bs_red, $amount: 10%) !important; }
+    }
+}
+
+.bs-btn {
+    // border-radius: 300px;
+    border-radius: $border_radius;
+    font-weight: 600;
+    padding: 1.1rem 2.7rem;
+    font-size: 1.6rem;
+    @include createTransition(.3s, ease);
+
+    &--primary {
+        background: darken($col_primary, 7%);
+        color: #fff;
+    }
+
+    &--animated {
+        &:hover {
+            padding: 1.2rem 3rem;
+        }
+    }
+}
+
+.nbs-btn {
+    display: inline-block;
+    font-weight: 600;
+    // padding: 1.4rem 3.4rem;
+    // padding: 1rem 3.2rem;
+    // border-radius: $border_radius;
+    border-radius: 100px;
+    padding: 1.2rem 3.2rem;
+    
+    font-size: 1.2rem;
+
+    &--primary {
+        background: darken($col_primary, 10%);
+        color: #fff;
+    }
+
+    &--light {
+        background: lighten($color: $col_primary, $amount: 40%);
+        color: darken($color: $col_primary, $amount: 10%);
+    }
+
+    &--delete {
+        background: $col_bs_red;
+        color: #fff;
+    }
+}
+
+.bs-logo-text {
+    font-size: 2.2rem;
+    padding-top: .3rem;
+    font-weight: 500;
+    
+    &--dark {
+        color: var(--primary-text);
+    }
+
+    &--light {
+        color: #fff;
+    }
+
+    span {
+        // padding-left: .4rem;
+        font-weight: 600;
+        // font-size: 3rem;
+        text-transform: capitalize;
+        color: darken($color: $col_primary, $amount: 10%);
+    }
+}
+
+.bs-title {
+    color: #333;
+    font-weight: 600;
+    word-spacing: 2px;
+
+    &--small {
+        font-size: 1.6rem;
+    }
+
+    &--medium {
+        font-size: 2.5rem;
+    }
+
+    &--large {
+        font-size: 3.7rem;
+    }
+}
+
+.bs-label {
+    color: var(--secondary-text);
+    font-weight: 600;
+    // font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+.bs-input {
+    background: #f7f7f7;
+    // border: 0;
+    padding: 1.2rem 1.7rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    // border-radius: $border-radius;
+}
+
+.nbs-input {
+    margin-top: .7rem;
+    display: inline-block;
+    width: 100%;
+    padding: 1.7rem 1.2rem 1.7rem 1.9rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    @include createTransition(.3s, ease);
+    // background: #f7f7f7;
+    background: var(--surface-background);
+    border: 0;
+    border-radius: 1.2rem;
+    color: var(--primary-text);
+}
+
+.bs-textarea {
+    outline: 0;
+    resize: none;
+    padding: 1.2rem 1.7rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: $border-radius;
+    background: var(--surface-background);
+    color: var(--primary-text);
+    border: 0;
+}
+
+
+
+.bs-notification {
+    position: fixed;
+    left: 0; right: 0; bottom: 0; top: 0;
+    background: rgba($color: #222, $alpha: .6);
+    z-index: 999999999999999;
+
+    &--inner {
+        width: 100%; height: 100%;
+        position: relative;
+    }
+
+    &--content {
+        @include absoluteCenter;
+        max-width: 60rem;
+        // background: #fff;
+        background: var(--surface-background);
+        padding: 3.4rem 4rem 3rem 4rem;
+        text-align: center;
+        border-radius: $border_radius;
+
+        @include respond(tab-port) {
+            transform: none;
+            left: 0; right: 0; top: 37%;
+            margin-left: auto; margin-right: auto
+        }
+
+        @include respond(phone) {
+            max-width: 100%; width: 90%;
+            padding: 3.7rem 2.1rem;
+        }
+
+        p {
+            line-height: 160%;
+            font-weight: 600;
+            padding-bottom: 2.1rem;
+            font-size: 1.4rem;
+            color: var(--secondary-text);
+
+            @include respond(phone) {
+                font-size: 1.4rem;
+            }
+        }
+
+        button {
+            
+        }
+    }
+}

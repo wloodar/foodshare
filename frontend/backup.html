@@ -1,0 +1,93 @@
+<div className="inbox-item--message">
+    <div className="inbox-item--message--container">
+        <div className="inbox-item--message--number">
+            <p>{conv.first_name}  <span>{conv.phone_number.replace(/[^\dA-Z]/g, '').replace(/(.{3})/g, '$1 ').trim()}</span></p>
+        </div>
+        <div className="inbox-item--message--content">
+            {/* <p>{conv.message}</p>
+            {conv.sent_by == this.props.auth.user.id ? <p>{"Ty: " + conv.message}</p>: <p>{conv.message}</p>}
+        </div>
+    </div>
+    <div className="inbox-item--message--date">
+        <p>{conv.sent_at}</p>
+    </div>
+</div>
+<div className="inbox-item--offer">
+    <div className="inbox-item--offer--image">
+        <img src={"https://res.cloudinary.com/dgzvc6fls/image/upload/v1575413544/" + conv.offer_image}/>
+        <div className="inbox-item--offer--overlay">
+            <div className="inbox-item--offer--content">
+                <div className="inbox-item--offer--content--text">
+                    <h5>{conv.offer_name} | <span>{conv.offer_price + "zł"}</span></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+
+// const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dgzvc6fls/image/upload";
+        // const CLOUDINARY_UPLOAD_PRESET = "rrejmnni";
+
+        // const file = $('#file-upload').prop('files')[0];
+        // const formData = new FormData();
+        // formData.append('file', file);
+        // formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+        // const cl = cloudinary.Cloudinary.new({ cloud_name: "dgzvc6fls" });
+
+        // console.log(cl.url("", {width: 600, crop: "scale", quality: "auto:eco", fetch_format: "auto"}));
+        
+        // axios({
+        //     url: cl.url("", {width: 600, crop: "scale", quality: "auto:eco", fetch_format: "auto"}),
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded'
+        //     },
+        //     data: formData,
+        //     onUploadProgress: function(progressEvent) {
+        //         var percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total)
+        //         console.log(percentCompleted)
+        //     }
+        // }).then((res) => {
+        //     console.log(res);
+        // }).catch((err) => {
+        //     console.log(err);
+        // })
+
+        // data.append('school_id', this.state.school_id);
+        // data.append('ns_name', this.state.ns_name);
+        // data.append('ns_price', this.state.ns_price);
+        // data.append('ns_active_to', this.state.ns_active_to);
+        // data.append('ns_description', this.state.ns_descripton);
+
+        // if (this.state.ns_active_to < new Date().getHours() + ':' + new Date().getMinutes()) {
+        //     this.setState({
+        //         errors: {ns_active_to: 'Podaj poprawny czas zakończenia oferty.'}
+        //     });
+        // } else {
+        //     const options = {
+        //         onUploadProgress: (progressEvent) => {
+        //             console.log(progressEvent.loaded)//Showing total value while uploading
+        //         }
+        //     }
+
+        //     axios.post(`${process.env.REACT_APP_GLOBAL_API_URL}/api/offers/share-new`, data, options)
+        //         .then(res => {
+        //             console.log(res);
+                    
+        //             if(res.data['success']) {
+        //                 $('.fdns-container--loading').css('display', 'none');
+        //                 $('.fdns-container--content').css('opacity', '1');
+        //                 $('.fdns-container--content').css('display', 'none');
+        //                 $('.fdns-container--success').css('display', 'block');
+        //             } else {
+        //                 $('.fdns-container--loading').css('display', 'none');
+        //                 $('.fdns-container--content').css('opacity', '1');
+        //                 $('.fdns-container--form--row--submit button').prop('disabled', false);
+
+        //                 this.setState({ errors: res.data });
+        //             }
+        //         })
+        // }

@@ -1,0 +1,92 @@
+.mn-footer {
+    width: 100%;
+    // background: #fafafa;
+    // background: #f7f7f7;
+    // background: #f9f9f9;
+    background: var(--surface-background);
+    padding: 4.7rem 0;
+
+    &--inner {
+        @include globalWidth;
+    }
+
+    &--content {
+        @include clearfix;
+    }
+
+    &--float {
+        width: 50%; float: left;
+        box-sizing: border-box;
+
+        @include respond(tab-port) {
+            width: 100%;
+            float: none; clear: both;
+            display: block;
+        }
+    }
+
+    &--right {
+        @include clearfix;
+        padding-top: 1.2rem;
+
+        @include respond(tab-port) {
+            margin-top: 2.4rem;
+        }
+
+        &--list {
+            width: 33%; float: left;
+            box-sizing: border-box;
+
+            @media screen and (max-width: 480px) {
+                width: 100%;
+                float: none; clear: both;
+                margin-top: 3.4rem;
+            }
+
+            &--header {
+                padding-bottom: .7rem;
+
+                h5 {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: var(--secondary-text);
+                }
+            }
+
+            ul {
+                width: 90%;
+
+                li {
+                    
+                    a {
+                        display: block;
+                        padding-bottom: .9rem; padding-top: .9rem;
+                        font-weight: 500;
+                        font-size: 1.2rem;
+                        color: #aaa;
+                        @include createTransition(.3s, ease);
+
+                        &:hover {
+                            color: darken($color: $col_primary, $amount: 15%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &--copyright {
+
+        p {
+            padding-top: 2.7rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #aaa;
+        }
+
+        @include respond(phone) {
+            padding-top: 3.7rem;
+        }
+    }
+}

@@ -1,0 +1,430 @@
+.auth-container {
+    @include globalWidth;
+    // min-height: 100vh;
+    display: flex;
+    margin-top: 7.4rem;
+
+    @include respond(tab-port) {
+        display: block;
+        margin-top: 1rem;
+        min-height: auto;
+    }
+
+    &--password-recovery {
+        margin-top: 10rem !important;
+    }
+
+    &--form {
+        width: 52rem;
+        position: relative;
+
+        @include respond(tab-land) {
+            width: 42rem;
+        }
+
+        @include respond(tab-port) {
+            margin-left: auto; margin-right: auto;
+            width: 100%;
+            max-width: 52rem;
+        }
+
+        &--inner {
+            width: 100%;
+            // @include absoluteCenter;
+            min-height: 70vh;
+
+            @include respond(tab-port) {
+                position: relative;
+                left: 0; right: 0; top: 0;
+                transform: none;
+                min-height: 0;
+            }
+        }
+
+        &--header {
+            padding-bottom: .7rem;
+
+            h2 {
+                font-weight: 700;
+                font-size: 2.1rem;
+            }
+        }
+    }
+
+    &--other {
+        width: calc(100% - 52rem);
+        flex: 1;
+        position: relative;
+
+        @include respond(tab-land) {
+            width: calc(100% - 42rem);
+        }
+
+        @include respond(tab-port) {
+            margin-top: 5.4rem;
+            margin-left: auto; margin-right: auto;
+            width: auto;
+            max-width: 52rem;
+            margin-bottom: 5.2rem;
+        }
+    }   
+
+    &--box {
+        width: 80%;
+        margin-left: auto; margin-right: auto;
+        // @include absoluteCenter;
+        margin-top: 4.7rem;
+
+        @include respond(tab-port) {
+            position: relative;
+            left: 0; right: 0; top: 0;
+            transform: none;
+            width: 100%;
+        }
+
+        &--image {
+            margin-bottom: 1.7rem;
+        }
+
+        &--text {
+            text-align: center;
+
+            @include respond(tab-port) {
+                margin-top: 1rem;
+            }
+
+            ul {
+
+                li {
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                    padding-top: .4rem; padding-bottom: .4rem;
+
+                    @include respond(tab-port) {
+                        font-size: 1.3rem;
+                        padding-top: .5rem; padding-bottom: .4rem;
+                    }
+
+                    a {
+                        color: darken($col_primary, 10%);
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.auth-form {
+    width: 100%;
+
+    &--header {
+        padding-bottom: 2.4rem;
+
+        h4 {
+            font-size: 3.7rem;
+            color: #111;
+            font-weight: 600;
+            // font-size: 3.1rem;
+            // font-weight: 500;
+        }
+    }
+
+    &--alert {
+        width: 100%;
+        margin-top: 1rem;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 1.3rem 2.1rem;
+        font-size: 1.2rem;
+        border-radius: 1.4rem;
+        @include createShadow(1px 0px 13px 1px rgba(140, 140, 140, 0.2));
+
+        p {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        &--normal {
+            background: darken($color: $col_primary, $amount: 10%);
+        }
+    }
+
+    &--row {
+        width: 100%;
+        margin-top: 3.1rem;
+        box-sizing: border-box;
+        @include clearfix;
+
+        button {
+            font-size: 1.2rem;
+            float: right;
+        }
+
+        &--facebook {
+            // margin-top: 5.1rem;
+
+            button {
+                i {
+                    font-weight: 400 !important;
+                    // font-size: 1.5rem;
+                    padding-right: .4rem;
+                }
+
+                display: block;
+                width: 100%;
+                background: #445DB4;
+                color: #fff;
+                font-weight: 600;
+                // border-radius: $border_radius;
+                // padding: 1.5rem 0;
+                border-radius: 100px;
+                text-transform: uppercase;
+            }
+        }
+
+        &--two {
+            @include clearfix;
+            
+            &--item {
+                width: 50%;
+                float: left;
+                box-sizing: border-box;
+                padding-left: 1.5rem;
+
+                &:first-of-type {
+                    padding-left: 0;
+                    padding-right: 1.5rem;
+                }
+            }
+        }
+
+        &--error {
+            margin-top: .6rem;
+            font-weight: 600;
+            color: $col_bs_red;
+            font-size: 1rem;
+            padding-left: .2rem
+        }
+
+        &--bottom-text {
+            margin-top: 3.7rem;
+            
+            p {
+                // color: #999;
+                color: #111;
+                font-weight: 500;
+                padding-top: .6rem;
+                font-size: 1.3rem;
+            }
+
+            a {
+                font-size: 1.2rem;
+                color: darken($color: $col_primary, $amount: 10%);
+                font-weight: 600;
+            }
+        }
+
+        &--submit {
+
+            &--two {
+                display: flex;
+
+                &--item {
+                    width: calc(50% - 2.1rem);
+                    margin-left: 2.1rem;
+
+                    &:first-of-type {
+                        margin-left: 0;
+                        margin-right: 2.1rem;
+                    }
+
+                    @include respond(phone) {
+                        width: 13.7rem;
+                        margin-left: .4rem;
+
+                        &:first-of-type {
+                            width: calc(100% - 14.1rem);
+                            margin-right: .4rem;
+                        }
+                    }
+
+                    button {
+                        width: 100%;
+                        padding: 1.5rem 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &--input-error {
+        // background: rgba($color: $col_bs_red, $alpha: .2) !important;
+        // border: 2px solid $col_bs_red !important;
+    }
+
+    &--additionals {
+        text-align: center;
+        margin-top: 3.4rem;
+
+        p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+
+            a {
+                color: darken($color: $col_primary, $amount: 10%);
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+
+.reset-password {
+    width: 100%;
+    padding-top: 5vh; margin-top: 3.7rem;
+    padding-bottom: 20vh;
+
+    h3 {
+        font-size: 2.1rem;
+        color: #111;
+        font-weight: 700;
+    }
+    
+    p {
+        padding-top: .3rem;
+        color: #333;
+        font-weight: 600;
+        padding-bottom: 2.4rem;
+        font-size: 1.2rem;
+    }
+
+    a {
+        display: inline-block;
+        margin-top: 2.2rem;
+    }
+}
+
+
+
+.custom-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    color: #999;
+    font-weight: 600;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-top: .4rem;
+
+    a {
+        color: darken($color: $col_primary, $amount: 7);
+        @include createTransition(.3s, ease-out);
+
+        &:hover {
+            color: darken($col_primary, 15%);
+        }
+    }
+  }
+  
+  /* Hide the browser's default checkbox */
+  .custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .custom-checkbox--checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 19px;
+    width: 19px;
+    background: #fff;
+    border: 2px solid #eee;
+    border-radius: 6px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  
+  /* When the checkbox is checked, add a blue background */
+  .custom-checkbox input:checked ~ .custom-checkbox--checkmark {
+    // background-color: #2196F3;
+    border: 2px solid darken($color: $col_primary, $amount: 7);;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .custom-checkbox--checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .custom-checkbox input:checked ~ .custom-checkbox--checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .custom-checkbox .custom-checkbox--checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid darken($color: $col_primary, $amount: 7);;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+
+#auth-form {
+    position: relative;
+
+    &--wait {
+        display: none;
+    }
+}
+
+.auth-form {
+    
+    &--wait {
+        background: rgba($color: #ffffff, $alpha: .9);
+        position: absolute;
+        left: 0; right: 0; bottom: 0; top: 0;
+        text-align: center;
+        z-index: 9999;
+
+        &--inner {
+            width: 100%; height: 100%;
+            position: relative;
+            
+            img, svg {
+                max-width: 15rem;
+                height: auto;
+                margin-left: auto; margin-right: auto;
+            }
+
+            h5 {
+                padding-top: 1.2rem;
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: $col_primary_dark;
+            }
+        }
+
+        &--content {
+            @include absoluteCenter;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+@mixin absoluteCenter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin globalWidth {
+    max-width: $global-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $global-width-padding;
+    padding-right: $global-width-padding;
+    box-sizing: border-box;
+    overflow-y: hidden;
+
+    @include respond(phone) {
+        padding-left: $global-width-padding-mobile;
+        padding-right: $global-width-padding-mobile;
+    }
+}
+
+@mixin absolute($top, $right, $bottom, $left) {
+    position: absolute;
+    top: $top; right: $right; bottom: $bottom; left: $left;
+}
+
+@mixin createTransition($timing, $type) {
+    -webkit-transition: all $timing $type;
+    -moz-transition: all $timing $type;
+    -o-transition: all $timing $type;
+    transition: all $timing $type;
+}
+
+@mixin createShadow($shadow) {
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+// MEDIA QUERY MANAGAMENT
+
+/* 
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media screen and (max-width: 37.5em) { @content }; // 600px
+    }
+    @else if $breakpoint == phablet {
+        @media (min-width: 37.5em)  { @content ; }
+    }
+    @else if $breakpoint == tab-port {
+        @media screen and (max-width: 56.25em) { @content }; // 900px
+    }
+    @else if $breakpoint == tab-land {
+        @media screen and (max-width: 75em) { @content }; // 1200px
+    }
+    @else if $breakpoint == big-desktop {
+        @media screen and(max-width: 112.5em) { @content }; // 1800px
+    }
+}

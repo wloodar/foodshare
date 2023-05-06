@@ -1,0 +1,139 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    -webkit-appearance: none !important;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include respond(phone) {
+        font-size: 50%;
+    }
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 60%;
+    }
+
+    font-family: sans-serif;
+}
+
+/* Space out content a bit */
+body {
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    // background: #fefefe;
+    background: var(--bg-color);
+}
+
+a {
+    outline: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+input, button {
+    outline: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input, textarea {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.root {
+    // background: #fefefe;
+}
+
+.disable-css-transitions {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+.parallax-bg {
+    transition: initial;
+}
+
+.copyright {
+    @include globalWidth;
+    margin-bottom: 1.4rem;
+
+    p {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1rem;
+        color: #c8c8c8;
+        display: inline-block;
+        margin-left: 1.7rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+:root {
+    --primary: #279665;
+    --bg-color: #fff;
+
+    --nav-bar-background: #fff;
+    --nav-bar-shadow: #efefef;
+    --nav-bar-border: rgba(255,255,255,0);
+    --nav-bar-icons: #444444;
+
+    --primary-text: #222222;
+    --secondary-text: #333;
+    --black-white-btn: #fafafa;
+    --welcome-theme-border: #eeeeee;
+    --surface-background: #f7f7f7;
+    --convs-viewed-background: #fff;
+    --convs-top-bar-background: rgba(255,255,255,.94);
+    --convs-message-bubble: #e4e7eb;
+    --convs-loading-background: #f0f2f4;
+}
+
+[data-theme="dark"] {
+    --primary: #279665;
+    --bg-color: #18191A;
+
+    --nav-bar-background: #242524;
+    --nav-bar-shadow: rgba(255,255,255,0);
+    --nav-bar-border: #393a3a;
+    --nav-bar-icons: #eeeeee;
+
+    --primary-text: #eeeeee;
+    --secondary-text: #b0b3b7;
+    --black-white-btn: #222222;
+    --welcome-theme-border: rgba(255,255,255,0);
+    --surface-background: #242524;
+    --convs-viewed-background: #242524;
+    --convs-top-bar-background: rgba(36,37,36,.97);
+    --convs-message-bubble: #242524;
+    --convs-loading-background: #242524;
+
+}
